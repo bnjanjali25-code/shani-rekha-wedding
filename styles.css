@@ -2629,3 +2629,7 @@ h1, h2, h3 {
         transition: none;
     }
 }
+
+/* Guided playback of the original invitation. */
+.invite-playback{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:9000;display:flex;align-items:center;gap:10px;padding:9px 14px;border:1px solid #eab4c1;border-radius:30px;background:rgba(255,248,250,.96);box-shadow:0 4px 22px #72273a25;color:#7b354a;font:12px Montserrat,sans-serif;max-width:calc(100% - 90px)}
+.invite-playback[hidden]{display:none}.invite-playback button{border:0;background:#d63467;color:white;border-radius:20px;padding:8px 12px;cursor:pointer;font:inherit;white-space:nowrap}.invite-playback span{white-space:nowrap}.invite-playback progress{width:55px;height:5px;accent-color:#d63467}@media(max-width:480px){.invite-playback{bottom:15px;left:12px;transform:none;padding:7px 10px;gap:7px;font-size:10px}.invite-playback progress{width:35px}}

@@ -339,3 +339,62 @@ document.body.addEventListener('click', function(e) {
             });
     }
 }, { once: false });
+
+// Automatically guide guests through the original layout after opening the envelope.
+(function guidedInvitation() {
+    const player = document.createElement('div');
+    player.className = 'invite-playback';
+    player.hidden = true;
+    player.setAttribute('aria-label', 'Invitation playback');
+    player.innerHTML = '<button type="button" id="invitePlayPause">Pause</button><span id="inviteScene" aria-live="polite">Invitation</span><progress max="100" value="0" aria-label="Invitation progress"></progress><button type="button" id="inviteReplay" aria-label="Replay invitation">↻</button>';
+    document.body.appendChild(player);
+    const toggle = player.querySelector('#invitePlayPause');
+    const label = player.querySelector('#inviteScene');
+    const progress = player.querySelector('progress');
+    // Separate stops for the two venues keep both addresses readable on phones.
+    const stops = [
+        { selector: '#home', name: 'Invitation', duration: 10000 },
+        { selector: '#events', name: 'Wedding Events', duration: 12000 },
+        { selector: '#venue .venue-info', name: 'Wedding Venue', duration: 12000 },
+        { selector: '#venue .venue-details', name: 'Haldi Venue', duration: 12000 },
+        { selector: '.footer', name: 'With love', duration: 6000 }
+    ];
+    let started = false, running = false, index = 0, elapsed = 0, previous = performance.now();
+    const total = stops.reduce((sum, stop) => sum + stop.duration, 0);
+    function visit() {
+        const element = document.querySelector(stops[index].selector);
+        if (element) window.scrollTo({ top: Math.max(0, element.getBoundingClientRect().top + window.scrollY - 85), behavior: 'smooth' });
+        label.textContent = stops[index].name;
+    }
+    function begin() {
+        started = true; running = true; index = 0; elapsed = 0;
+        player.hidden = false; toggle.textContent = 'Pause'; visit();
+    }
+    function pause() { if (running) { running = false; toggle.textContent = 'Play'; } }
+    toggle.addEventListener('click', () => {
+        if (index === stops.length - 1 && elapsed >= stops[index].duration) return begin();
+        running = !running; toggle.textContent = running ? 'Pause' : 'Play';
+        if (running) visit();
+    });
+    player.querySelector('#inviteReplay').addEventListener('click', begin);
+    // Manual browsing always takes priority over automatic movement.
+    window.addEventListener('wheel', pause, { passive: true });
+    window.addEventListener('touchmove', pause, { passive: true });
+    window.addEventListener('keydown', event => { if (['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(event.key)) pause(); });
+    document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', pause));
+    function frame(now) {
+        const delta = Math.min(now - previous, 250); previous = now;
+        const overlay = document.getElementById('envelopeWrapper');
+        if (!started && (!overlay || getComputedStyle(overlay).display === 'none')) begin();
+        if (running && !document.hidden) {
+            elapsed += delta;
+            if (elapsed >= stops[index].duration) {
+                if (index < stops.length - 1) { index++; elapsed = 0; visit(); }
+                else { elapsed = stops[index].duration; running = false; toggle.textContent = 'Replay'; }
+            }
+        }
+        progress.value = 100 * (stops.slice(0, index).reduce((sum, stop) => sum + stop.duration, 0) + elapsed) / total;
+        requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+})();
