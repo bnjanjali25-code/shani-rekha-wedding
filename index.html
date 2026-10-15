@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shani Raj Kali &amp; Dr. Rekha Singh | Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css?v=photo-2">
+    <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+            </div>
+            <p class="preloader-text">Loading your invitation...</p>
+        </div>
+    </div>
+
+    <!-- Envelope Overlay -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope-particles" id="envelopeParticles"></div>
+        <p class="envelope-hint">Tap the seal to open</p>
+        <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-letter" id="envelopeLetter">
+                <div class="letter-content">
+                    <div class="letter-ornament">✦ ✦ ✦</div>
+                    <p class="letter-heading" data-translate="envelope_heading">You're Invited</p>
+                    <p class="letter-names" data-translate="envelope_names">Shani Raj & Dr. Rekha</p>
+                    <p class="letter-subtext" data-translate="envelope_subtext">request the pleasure of your company</p>
+                    <div class="letter-ornament">✦ ✦ ✦</div>
+                </div>
+            </div>
+            <div class="envelope-front-bottom"></div>
+            <div class="envelope-front-left"></div>
+            <div class="envelope-front-right"></div>
+            <div class="envelope-flap" id="envelopeFlap"></div>
+            <div class="envelope-seal" id="envelopeSeal">
+                <img src="wax-seal.png" alt="Wax Seal" class="seal-image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Decorative Hands Dropping Petals -->
+    <div class="petal-hands">
+        <!-- Left Hand -->
+        <div class="hand-container left-hand">
+            <div class="hand-silhouette">
+                <div class="hand-palm"></div>
+                <div class="hand-fingers">
+                    <div class="finger finger-1"></div>
+                    <div class="finger finger-2"></div>
+                    <div class="finger finger-3"></div>
+                    <div class="finger finger-4"></div>
+                    <div class="finger finger-5"></div>
+                </div>
+            </div>
+            <div class="hand-petals-burst">
+                <div class="burst-petal bp-1"></div>
+                <div class="burst-petal bp-2"></div>
+                <div class="burst-petal bp-3"></div>
+                <div class="burst-petal bp-4"></div>
+                <div class="burst-petal bp-5"></div>
+            </div>
+        </div>
+
+        <!-- Right Hand -->
+        <div class="hand-container right-hand">
+            <div class="hand-silhouette">
+                <div class="hand-palm"></div>
+                <div class="hand-fingers">
+                    <div class="finger finger-1"></div>
+                    <div class="finger finger-2"></div>
+                    <div class="finger finger-3"></div>
+                    <div class="finger finger-4"></div>
+                    <div class="finger finger-5"></div>
+                </div>
+            </div>
+            <div class="hand-petals-burst">
+                <div class="burst-petal bp-1"></div>
+                <div class="burst-petal bp-2"></div>
+                <div class="burst-petal bp-3"></div>
+                <div class="burst-petal bp-4"></div>
+                <div class="burst-petal bp-5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Decorations -->
+    <div class="floating-elements">
+        <div class="rose-petal petal-1"></div>
+        <div class="rose-petal petal-2"></div>
+        <div class="rose-petal petal-3"></div>
+        <div class="rose-petal petal-4"></div>
+        <div class="rose-petal petal-5"></div>
+        <div class="rose-petal petal-6"></div>
+        <div class="rose-petal petal-7"></div>
+        <div class="rose-petal petal-8"></div>
+        <div class="rose-petal petal-9"></div>
+        <div class="rose-petal petal-10"></div>
+        <div class="rose-petal petal-11"></div>
+        <div class="rose-petal petal-12"></div>
+        <div class="rose-petal petal-13"></div>
+        <div class="rose-petal petal-14"></div>
+        <div class="rose-petal petal-15"></div>
+        <div class="rose-petal petal-16"></div>
+        <div class="rose-petal petal-17"></div>
+        <div class="rose-petal petal-18"></div>
+        <div class="rose-petal petal-19"></div>
+        <div class="rose-petal petal-20"></div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button id="musicToggle" class="music-toggle" title="Play/Pause Music">
+            <span class="music-icon">🎵</span>
+        </button>
+        <audio id="backgroundMusic" loop autoplay>
+            <!-- Add your music file here -->
+            <source src="background.mp3?v=restored" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link" data-translate="nav_home">Home</a>
+            <a href="#events" class="nav-link" data-translate="nav_events">Events</a>
+            <a href="#venue" class="nav-link" data-translate="nav_venue">Venues</a>
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="hi">हिंदी</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-image-bg"></div>
+        <div class="mountains">
+            <div class="mountain mountain-1"></div>
+            <div class="mountain mountain-2"></div>
+            <div class="mountain mountain-3"></div>
+            <div class="mountain mountain-4"></div>
+            <div class="mountain mountain-5"></div>
+            <div class="mountain mountain-6"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="blessing">ॐ</div>
+            <h1 class="couple-names">
+                <span class="bride-name" data-translate="groom_name">Shani Raj Kali</span>
+                <span class="parent-info" data-translate="groom_parents">S/O Ex MLA Mr. Gopal Kali & Mrs. Sunita Kali</span>
+                <span class="ampersand">&</span>
+                <span class="groom-name" data-translate="bride_name">Dr. Rekha Singh</span>
+                <span class="parent-info" data-translate="bride_parents">D/O Mr. Surendar Pal Singh and Mrs. Vidhya Devi</span>
+            </h1>
+            <p class="wedding-date" data-translate="wedding_date">14 November 2026 · 8:00 PM</p>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label" data-translate="days">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label" data-translate="hours">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label" data-translate="minutes">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label" data-translate="seconds">Seconds</span>
+                </div>
+            </div>
+            <p class="tagline" data-translate="tagline">Together with our families, we invite you to celebrate our wedding</p>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="decorative-shape shape-left"></div>
+        <div class="decorative-shape shape-right"></div>
+        <div class="container">
+            <h2 class="section-title" data-translate="events_title">Wedding Celebrations</h2>
+            <div class="events-grid">
+
+
+                <div class="event-card">
+                    <div class="event-date" data-translate="event3_date">13 November 2026</div>
+                    <h3 class="event-name" data-translate="event3_name">Haldi Ceremony</h3>
+                    <p class="event-venue" data-translate="event3_venue">D 80, Ganga Nagar, Meerut</p>
+                    <p class="event-description" data-translate="event3_desc">Join us for the joy and colours of Haldi</p>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date" data-translate="event4_date">14 November 2026</div>
+                    <h3 class="event-name" data-translate="event4_name">Wedding Ceremony</h3>
+                    <p class="event-time" data-translate="event4_time">8:00 PM</p>
+                    <p class="event-venue" data-translate="event4_venue">SGN Garden, Kota, Rajasthan</p>
+                    <p class="event-description" data-translate="event4_desc">With your blessings, we begin our journey together</p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+<!-- Image Showcase Section -->
+    <section class="image-showcase">
+        <div class="showcase-image">
+            <img src="wedding-hands-2.jpg" alt="Wedding Moment" class="showcase-img">
+            <div class="showcase-overlay"></div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="venue">
+        <div class="decorative-hills">
+            <div class="hill hill-1"></div>
+            <div class="hill hill-2"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title" data-translate="venue_title">Venues & Locations</h2>
+            <div class="venue-content">
+                <div class="venue-info">
+                    <h3 class="venue-name" data-translate="venue_name">SGN Garden</h3>
+                    <p class="venue-address" data-translate="venue_address">Railway Overbridge Bundi Road, National Highway 12, Kota, Rajasthan 324008</p>
+                    <div class="venue-map">
+                        <iframe title="Wedding venue map" src="https://maps.google.com/maps?q=25.2051961,75.8316778&amp;z=16&amp;output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/place/SGN+Gardens+%26+Banquets/@25.2051961,75.8291029,17z/data=!4m6!3m5!1s0x396f9b0b5e360cf9:0x18427d3f242fad4c!8m2!3d25.2051961!4d75.8316778!16s%2Fg%2F124swypnz" target="_blank" class="btn btn-primary" data-translate="directions_btn">Get Directions</a>
+                </div>
+
+                <div class="venue-details">
+                    <h3 class="details-title" data-translate="haldi_venue_title">Haldi Venue</h3>
+                    <p class="venue-name" data-translate="haldi_venue_name">Residence of Ex MLA Mr. Gopal Kali</p>
+                    <p class="venue-address" data-translate="haldi_address">D 80, Ganga Nagar, Meerut</p>
+                    <p class="event-date" data-translate="event3_date">13 November 2026</p>
+                    <div class="venue-map"><iframe title="Haldi venue map" src="https://maps.google.com/maps?q=29.0089411,77.7498693&amp;z=16&amp;output=embed" width="600" height="450" style="border:0" loading="lazy"></iframe></div>
+                    <a href="https://www.google.com/maps/place/Gopal+Kali+(Ex+MLA+Hastinapur)/@29.0089411,77.7472944,17z/data=!4m6!3m5!1s0x390c7b0016fcecf9:0x6e02280fcfaa42a7!8m2!3d29.0089411!4d77.7498693!16s%2Fg%2F11y3ctrp6f" target="_blank" rel="noopener" class="btn btn-primary" data-translate="directions_btn">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text" data-translate="footer_text">We look forward to celebrating with you!</p>
+<p class="footer-copyright" data-translate="footer_copyright">Shani Raj Kali & Dr. Rekha Singh · 14 November 2026</p>
+        </div>
+    </footer>
+
+    <script src="translations.js?v=dr-rekha"></script>
+    <script src="script.js"></script>
+</body>
+</html>
