@@ -1,8 +1,14 @@
-// Preloader
-window.addEventListener('load', function() {
+// Show the invitation as soon as its HTML is ready; maps and music load separately.
+function dismissPreloader() {
     const preloader = document.getElementById('preloader');
-    preloader.classList.add('hidden');
-});
+    if (preloader) preloader.classList.add('hidden');
+}
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', dismissPreloader, { once: true });
+} else {
+    dismissPreloader();
+}
+setTimeout(dismissPreloader, 2500);
 
 // Envelope Opening
 const envelopeWrapper = document.getElementById('envelopeWrapper');

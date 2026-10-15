@@ -82,11 +82,12 @@ let currentLanguage = 'en';
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
-    const savedLanguage = localStorage.getItem('wedding-language');
+    let savedLanguage = null;
+    try { savedLanguage = localStorage.getItem('wedding-language'); } catch (_) {}
 
     if (urlLang && translations[urlLang]) {
         currentLanguage = urlLang;
-        localStorage.setItem('wedding-language', urlLang);
+        try { localStorage.setItem('wedding-language', urlLang); } catch (_) {}
     } else if (savedLanguage && translations[savedLanguage]) {
         currentLanguage = savedLanguage;
     }
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setLanguage(lang);
 
             // Save to localStorage
-            localStorage.setItem('wedding-language', lang);
+            try { localStorage.setItem('wedding-language', lang); } catch (_) {}
         });
     });
 });

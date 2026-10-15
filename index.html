@@ -6,6 +6,11 @@
     <title>Shani Raj Kali &amp; Dr. Rekha Singh | Wedding Invitation</title>
     <link rel="stylesheet" href="styles.css?v=photo-2">
     <link rel="stylesheet" href="fonts.css">
+<style>
+@keyframes dismiss-loading { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+.preloader { animation: dismiss-loading 0.3s 3s forwards; }
+</style>
+<noscript><style>.preloader,.envelope-wrapper { display: none !important; }</style></noscript>
 </head>
 <body>
     <!-- Preloader -->
@@ -118,7 +123,7 @@
         <button id="musicToggle" class="music-toggle" title="Play/Pause Music">
             <span class="music-icon">🎵</span>
         </button>
-        <audio id="backgroundMusic" loop autoplay>
+        <audio id="backgroundMusic" loop preload="none">
             <!-- Add your music file here -->
             <source src="background.mp3?v=restored" type="audio/mpeg">
         </audio>
@@ -266,7 +271,7 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=dr-rekha"></script>
-    <script src="script.js"></script>
+    <script src="translations.js?v=loading-fix-1"></script>
+    <script src="script.js?v=loading-fix-1"></script>
 </body>
 </html>
